@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel = "stylesheet" href = {% static "css/login.css" %}>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <div class = "login-container">
+        
+        <div class = "img-login"><i class="material-symbols-outlined">
+            inventory_2
+          </i>
+          <span class="logo_name">Invento</span><img src={% static '../media/login1.jpg' %} alt="login image"></div>
+    <div>
+    <form class="sign-in" action="/login/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button class="submit-btn">Submit</button>
+
+
+    </form>
+    
+</div>
+</div>
+</body>
+</html>

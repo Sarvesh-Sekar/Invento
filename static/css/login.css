@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body
+{
+    margin: 0;
+    background-color: #E4E9F7;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sign-in
+{
+    border: 4px solid black;
+    background-color: #11101d;
+    width:25vw;
+    height: 50vh;
+    margin: 20vh  10vw 10vh auto;
+    padding:4vh 3vw;
+    color: #E4E9F7;
+    border-radius: 10px;
+}
+
+.submit-btn
+{
+    display: block;
+    margin: 10vh auto;
+    padding:1vh 3vw;
+    background-color: black;
+    color:whitesmoke;
+    border-radius: 10px;
+    cursor: pointer;
+    
+}
+.input
+{
+    width:20vw;
+    height: 3vh;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.submit-btn :hover
+{
+      background-color: #E4E9F7;
+      color: #11101d;
+}
+
+.login-container
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-container .img-login
+{
+    margin-top:2vh;
+    
+    
+}
+.login-container .img-login img
+{
+    margin-top:10vh;
+    margin-right: 15vw;
+    margin-left: 10vw;
+    border: 2px solid #11101d;
+    border-radius: 10px;
+    width: 25vw;
+   
+}
+
+.login-container .material-symbols-outlined  , .login-container .logo_name
+{
+    margin-top:5vh;
+    padding: 0%;
+}
+
+
+.login-container .img-login .material-symbols-outlined
+{
+    margin-left: 10vw;
+    font-size: 45px;
+    padding: 15px;
+}
+
+.login-container .img-login .logo_name
+{
+    margin-right: 8vw;
+    font-size: 55px;
+    padding: 15px;
+}
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-container .sign-in .submit-btn  :hover
+{
+    background-color: #E4E9F7;
+    color: #11101d;
+}
