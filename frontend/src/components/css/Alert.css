@@ -1,0 +1,77 @@
+/* Alert.css */
+.alert-page {
+  display: flex;
+}
+
+.alert-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.alert-summary {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.alert-summary-box {
+  flex: 1;
+  margin: 0 10px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.alert-summary-box h2 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.alert-summary-box p {
+  font-size: 1.5em;
+  color: #007bff;
+}
+
+.alerts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.alert-box {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.alert-box p {
+  margin: 5px 0;
+  font-size: 1em;
+  color: #555;
+}
+
+.alert-box strong {
+  color: #333;
+}
+
+.sidebar.open ~ .alert-content {
+    margin-left: 60px; /* Shifts the content when sidebar is collapsed */
+  }
+
+  .sidebar.open {
+    width: 60px; /* Shrink width for icon-only view */
+  }
+
+  .alert-page .alert-content {
+    margin-left: 250px; /* Default margin when sidebar is open */
+    padding: 20px;
+    width: 100%;
+    transition: margin-left 0.3s ease; /* Smooth transition for content shift */
+  }

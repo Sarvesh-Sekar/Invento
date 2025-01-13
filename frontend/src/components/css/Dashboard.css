@@ -1,0 +1,114 @@
+.dashboard {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Overview Row */
+  .overview-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .card {
+    flex: 1;
+    padding: 20px;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card.red {
+    background-color: #e74c3c;
+  }
+  
+  .card.green {
+    background-color: #27ae60;
+  }
+  
+  .card.yellow {
+    background-color: #f1c40f;
+  }
+  
+  /* Timeframe Select */
+  .timeframe-select {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .timeframe-select select {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Scrollable Containers */
+  .scrollable-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .scroll-box {
+    flex: 1;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow-y: auto;
+    max-height: 300px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .scroll-box table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .scroll-box th, .scroll-box td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Graph Container */
+  .graph-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .overview-row, .scrollable-container {
+      flex-direction: column;
+    }
+  
+    .card, .scroll-box, .graph-container {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  
+  .dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .dashboard-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Reuse styles from the previous implementation */
+  

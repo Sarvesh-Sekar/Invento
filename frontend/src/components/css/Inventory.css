@@ -1,0 +1,441 @@
+/* Sidebar styles */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  box-sizing: border-box; /* Include padding and borders in width/height */
+}
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    transition: width 0.3s ease;
+    overflow: hidden;
+    z-index: 1000;
+  }
+  .inventory-page {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .inventory-content {
+    margin-left: 250px; /* Sidebar width */
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .inventory-containers {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .inventory-containers {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .container {
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    width: 30%;
+    text-align: center;
+    
+  }
+  
+  .inventory-containers .yellow {
+    background-color: #f1c40f;
+    color: black;
+    
+  }
+   
+  
+  .inventory-containers .purple {
+    background-color: lightcoral;
+    color: black;
+  }
+  
+  .filters {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .inventory-table {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .inventory-table th, .inventory-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+
+  .sidebar.open {
+    width: 60px; /* Shrink width for icon-only view */
+  }
+  
+  /* Content area - shifts based on sidebar toggle */
+  .inventory-page .inventory-content {
+    margin-left: 250px; /* Default margin when sidebar is open */
+    padding: 20px;
+    width: 100%;
+    transition: margin-left 0.3s ease; /* Smooth transition for content shift */
+  }
+  
+  .sidebar.open ~ .inventory-content {
+    margin-left: 60px; /* Shifts the content when sidebar is collapsed */
+  }
+  
+  .inventory-content {
+    margin-left: 250px; /* Default position when sidebar is open */
+    padding: 20px;
+    transition: margin-left 0.3s ease; /* Smooth transition for content shift */
+  }
+  
+  .inventory-content.shift {
+    margin-left: 60px; /* Shift content left when sidebar is collapsed */
+  }
+  .add-product-btn {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+  }
+  
+  .add-product-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  .add-product-btn:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.6);
+  }
+  
+  /* Search Filter Section */
+  .filters {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .filters select,
+  .filters input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 200px; /* Control width of input/select */
+    transition: border 0.3s ease;
+  }
+  
+  .filters select:focus,
+  .filters input[type="text"]:focus {
+    border-color: #3498db;
+    outline: none;
+  }
+  
+  .filters button {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .filters button:hover {
+    background-color: #2980b9;
+  }
+  
+  .filters button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.6);
+  }
+  
+  /* Modal background */
+  .add-product-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Modal content */
+  .modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Heading */
+  .modal-content h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #333;
+  }
+
+  /* Success Popup */
+.success-popup {
+  position: fixed;
+  top: 10%;
+  right: 10%;
+  background-color: #d4edda;
+  color: #155724;
+  padding: 10px 20px;
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Error Messages */
+.error-message {
+  color: #dc3545;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+  
+  /* Input Fields */
+  .modal-content input,
+  .modal-content select {
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+  
+  
+  /* Input field focus effect */
+  .modal-content input:focus,
+  .modal-content select:focus {
+    border-color: #3498db;
+    outline: none;
+  }
+  
+  /* Delete confirmation modal styles */
+.confirm-delete-modal {
+  position: fixed; /* Fix the position relative to the viewport */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for perfect centering */
+  background-color: #fff; /* White background for visibility */
+  padding: 20px; /* Space inside the modal */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); /* Subtle shadow for better focus */
+  border-radius: 8px; /* Rounded corners for aesthetics */
+  z-index: 1000; /* High z-index to ensure it appears above all elements */
+}
+
+/* Overlay background */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  z-index: 999; /* Ensure it appears below the modal but above other content */
+}
+
+/* Buttons inside the modal */
+.delete-confirm-modal button {
+  margin: 10px;
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-confirm-modal .confirm {
+  background-color: #f44336; /* Red for confirmation */
+  color: white;
+}
+
+.delete-confirm-modal .cancel {
+  background-color: #ccc; /* Grey for cancel */
+  color: black;
+}
+
+  /* Buttons */
+  .modal-content button {
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .modal-content button:hover {
+    background-color: #2980b9;
+  }
+  
+  .modal-content button.cancel {
+    background-color: #e74c3c;
+  }
+  
+  .modal-content button.cancel:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Close button for modal */
+  .modal-content button.close-btn {
+    background-color: transparent;
+    color: #e74c3c;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    align-self: flex-end;
+  }
+  
+  .modal-content button.close-btn:hover {
+    color: #c0392b;
+  }
+  
+  /* For mobile responsiveness */
+  /* General responsive styling for smaller screens */
+@media (max-width: 768px) {
+  /* Sidebar adjustments */
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .sidebar.open {
+    width: 100%; /* Expand to full width */
+  }
+
+  /* Inventory page layout */
+  .inventory-page {
+    flex-direction: column;
+    max-width: 100%; /* Stack components vertically */
+  }
+
+  /* Content adjustments for smaller screens */
+  .inventory-content {
+    margin-left: 0; /* Remove margin for mobile */
+    padding: 10px; /* Add some padding for better spacing */
+    max-width: 100%; /* Fit the width of the screen */
+  }
+
+  /* Container adjustments */
+  .inventory-containers {
+    flex-direction: column; /* Stack containers vertically */
+    gap: 10px; /* Add spacing between items */
+    width: 250%;
+  }
+
+  .container {
+    width: 100%; /* Full width for each container */
+  }
+
+  /* Filters section */
+  .filters {
+    flex-direction: row; /* Stack filters vertically */
+    gap: 10px; /* Add spacing between filters */
+  }
+
+  .filters select,
+  .filters input[type="text"] {
+    max-width: 100%; /* Ensure inputs fit the screen */
+  }
+
+  /* Buttons */
+  .add-product-btn,
+  .filters button {
+    width: 100%; /* Full width buttons */
+  }
+
+  /* Table adjustments */
+  .inventory-table {
+    font-size: 0.9rem; /* Slightly smaller font size for better fit */
+    display: block; /* Make table scrollable on smaller screens */
+    overflow-x: auto;
+  }
+
+  .inventory-table th,
+  .inventory-table td {
+    padding: 10px; /* Adjust padding for smaller screens */
+    font-size: 0.8rem; /* Reduce font size slightly */
+  }
+
+  /* Modal adjustments */
+  .modal-content {
+    width: 90%; /* Ensure modal fits within mobile screen */
+    padding: 20px; /* Adjust padding */
+  }
+
+  /* Delete confirmation modal */
+  .confirm-delete-modal {
+    width: 90%; /* Fit modal within screen width */
+    padding: 15px; /* Adjust padding */
+  }
+
+  /* Success popup adjustments */
+  .success-popup {
+    width: auto; /* Adjust to content size */
+    right: 5%; /* Adjust positioning */
+  }
+}
+
+/* For even smaller screens */
+@media (max-width: 480px) {
+  .modal-content,
+  .confirm-delete-modal {
+    width: 100%; /* Use full width for very small screens */
+    padding: 10px;
+  }
+
+  .success-popup {
+    top: 5%; /* Adjust positioning */
+    right: 5%;
+    font-size: 0.8rem; /* Reduce font size */
+  }
+
+  .inventory-table th,
+  .inventory-table td {
+    font-size: 0.7rem; /* Further reduce font size if necessary */
+    padding: 5px;
+  }
+
+
+  }
+  

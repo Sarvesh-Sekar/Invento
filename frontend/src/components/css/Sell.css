@@ -1,0 +1,361 @@
+/* Sidebar styles */
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    transition: width 0.3s ease;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.sell-page {
+    display: flex;
+    flex-direction: row;
+}
+
+.sell-content {
+    margin-left: 250px; /* Sidebar width */
+    padding: 20px;
+    width: 100%;
+}
+
+.sell-containers {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sell-containers .green {
+    background-color:#2ecc71;
+    color: black;
+}
+
+.sell-containers .blue {
+    background-color:lightcoral ;
+    color: black;
+}
+
+.filters {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sell-table {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 100%; /* Ensures the table doesn't expand beyond the page width */
+    overflow-x: auto; /* Enables horizontal scrolling */
+    border-collapse: collapse;
+    table-layout: fixed; /* Ensures equal column width */
+}
+
+.sell-table th,
+.sell-table td {
+    border: 1px solid #ddd;
+    padding: 12px; /* Adds more space to make it look spacious */
+    text-align: center;
+    word-wrap: break-word; /* Prevents long text from overflowing */
+}
+
+.sell-table thead th {
+    background-color: #f4f4f4; /* Adds a subtle background to headers for better visibility */
+    font-weight: bold;
+}
+
+.sell-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternating row color for readability */
+}
+
+.sell-table-container {
+    width: 100%; /* Keeps the table container restricted to its parent width */
+    overflow-x: auto; /* Enables scrolling if table width exceeds */
+}
+
+.sidebar.open {
+    width: 60px; /* Shrink width for icon-only view */
+}
+
+/* Content area - shifts based on sidebar toggle */
+.sell-page .sell-content {
+    margin-left: 250px; /* Default margin when sidebar is open */
+    padding: 20px;
+    width: 100%;
+    transition: margin-left 0.3s ease; /* Smooth transition for content shift */
+}
+
+.sidebar.open ~ .sell-content {
+    margin-left: 60px; /* Shifts the content when sidebar is collapsed */
+}
+
+.sell-content {
+    margin-left: 250px; /* Default position when sidebar is open */
+    padding: 20px;
+    transition: margin-left 0.3s ease; /* Smooth transition for content shift */
+}
+
+.sell-content.shift {
+    margin-left: 60px; /* Shift content left when sidebar is collapsed */
+}
+
+.add-product-btn {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.add-product-btn:hover {
+    background-color: #2980b9;
+}
+
+.add-product-btn:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.6);
+}
+
+/* Search Filter Section */
+.filters {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.filters select,
+.filters input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 200px; /* Control width of input/select */
+    transition: border 0.3s ease;
+}
+
+.filters select:focus,
+.filters input[type="text"]:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.filters .add-button {
+    padding: 10px 20px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filters button:hover {
+   
+    border: 2px solid white;
+}
+
+.filters button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.6);
+}
+
+/* Modal background */
+.add-product-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal content */
+.modal-content {
+    background-color: white;
+    max-height: 90%; 
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    gap: 15px;
+}
+
+/* Heading */
+.modal-content h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Success Popup */
+.success-popup {
+    position: fixed;
+    top: 10%;
+    right: 10%;
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px 20px;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Error Messages */
+.error-message {
+    color: #dc3545;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Input Fields */
+.modal-content input,
+.modal-content select {
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 100%;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Input field focus effect */
+.modal-content input:focus,
+.modal-content select:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Delete confirmation modal styles */
+.confirm-delete-modal {
+    position: fixed; /* Fix the position relative to the viewport */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for perfect centering */
+    background-color: #fff; /* White background for visibility */
+    padding: 20px; /* Space inside the modal */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); /* Subtle shadow for better focus */
+    border-radius: 8px; /* Rounded corners for aesthetics */
+    z-index: 1000; /* High z-index to ensure it appears above all elements */
+}
+
+/* Overlay background */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: auto;
+}
+
+/* Buttons inside the modal */
+.delete-confirm-modal button {
+    margin: 10px;
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-confirm-modal .confirm {
+    background-color: #f44336; /* Red for confirmation */
+    color: white;
+}
+
+.delete-confirm-modal .cancel {
+    background-color: #ccc; /* Grey for cancel */
+    color: black;
+}
+
+/* Buttons */
+.modal-content button {
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+    background-color: #2980b9;
+}
+
+.modal-content button.cancel {
+    background-color: #e74c3c;
+}
+
+.modal-content button.cancel:hover {
+    background-color: #c0392b;
+}
+
+/* Close button for modal */
+.modal-content button.close-btn {
+    background-color: transparent;
+    color: #e74c3c;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.modal-content button.close-btn:hover {
+    color: #c0392b;
+}
+
+/* For mobile responsiveness */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+    }
+
+    .sell-page {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 60px; /* Default to icon-only mode for smaller screens */
+    }
+
+    .sidebar.open {
+        width: 250px; /* Expand for detailed view */
+    }
+
+    .sell-content {
+        margin-left: 60px; /* For small screens, shift content when sidebar is collapsed */
+    }
+
+    .sell-content.shift {
+        margin-left: 250px; /* Shift the content when sidebar is expanded */
+    }
+}

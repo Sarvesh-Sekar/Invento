@@ -1,0 +1,113 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: whitesmoke;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /* Adds space between the image and the login container */
+}
+
+.image-container {
+  flex: 0.5; /* Ensures equal size with the login form */
+  margin:70px;
+}
+
+.image-container img {
+  max-width: 80%;
+  max-height: 100%;
+  height: auto;
+ 
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-form {
+  flex: 0.4; /* Ensures equal size with the image container */
+  padding: 40px;
+  max-width: 400px;
+  max-height: 100%;
+ 
+  background-color: #f9f9f9;
+  border-radius:8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.show-password {
+  display: inline-flex;
+  align-items: center; /* Ensures alignment of the checkbox and label */
+  gap: 5px; /* Adds space between the checkbox and the label */
+  margin-top: 15px;
+}
+
+.show-password input[type="checkbox"] {
+  width: 15px; /* Adjust the checkbox size */
+  height: 15px; /* Adjust the checkbox size */
+  margin: 0; /* Removes any extra margins */
+  cursor: pointer; /* Optional: Makes the checkbox more user-friendly */
+}
+
+.show-password p {
+  font-size: 0.9rem; /* Adjust the size of the "Show Password" text */
+  margin: 0; /* Removes any extra margins */
+  cursor: pointer; /* Optional: Makes the text clickable along with the checkbox */
+}
+
+
+.login-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .image-container {
+    margin-bottom: 20px;
+  }
+
+  .image-container img {
+    width: 100%; /* Ensures image adapts to the container width */
+    height: auto;
+  }
+}
