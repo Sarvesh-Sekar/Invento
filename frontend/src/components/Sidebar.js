@@ -28,7 +28,7 @@ const Sidebar = ({ toggleContentShift }) => {
           <li><Link to="/purchase">🛒 Purchase</Link></li>
           <li><Link to="/sell">💰 Sell</Link></li>
           <li><Link to="/alerts">🔔 Alerts</Link></li>
-          <li><Link to="/settings">⚙️ Settings</Link></li>
+          <li><Link to="/settings">Settings</Link></li>
          
         </ul>
       </nav>
